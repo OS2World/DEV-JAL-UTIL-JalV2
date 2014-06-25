@@ -1,0 +1,58 @@
+
+# -------------------------------------------------------------------
+# Makefile to build JAL V2 PIC12 utilities for eComStation (OS/2)
+#
+# For use with WMAKE of the Watcom Open C/C++ compiler
+# Assumes - Watcom WCC386 compiler
+#         - Watcom Library Manager
+#
+# author: Rob Hamerling
+#
+# (c) Copyright 2008..2014. R.Hamerling. All rights reserved.
+# ------------------------------------------------------------------
+
+BASEDIR  = k:\watcom                  # base directory of compiler
+
+CC       = wcc386
+!ifneqi platform linux
+!  define CFLAGS -6r -bc -bt=$(platform) -i=$(BASEDIR)\h\os2;$(BASEDIR)\h -ox -wx -zq
+!else
+!  define CFLAGS -6r -bc -bt=linux -i=$(BASEDIR)\lh;$(BASEDIR)\h -ox -wx -zq
+!endif
+OBJECTS   = pic.obj        &
+            pic12.obj      &
+            pic14.obj      &
+            pic14h.obj     &
+            pic16.obj      &
+            picbsrop.obj   &
+            piccolst.obj   &
+            picdelay.obj   &
+            pic_brop.obj   &
+            pic_cmdo.obj   &
+            pic_code.obj   &
+            pic_daop.obj   &
+            pic_emu.obj    &
+            pic_gop.obj    &
+            pic_inst.obj   &
+            pic_op.obj     &
+            pic_opfn.obj   &
+            pic_stk.obj    &
+            pic_stvar.obj  &
+            pic_var.obj    &
+            pic_wopt.obj   &
+            picmovlpop.obj
+
+.extensions :
+.extensions : .lib .obj .c .h
+
+!loaddll  wcc386 wccd386
+
+.c.obj : .autodepend
+     @echo Compiling $*
+     @$(CC)  $(CFLAGS) $*
+
+LibPic12.lib : $(OBJECTS)
+     @echo Building library $*
+     @wlib -q -b -n $* $(OBJECTS)
+     @del $(OBJECTS)
+

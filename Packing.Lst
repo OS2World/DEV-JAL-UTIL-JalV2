@@ -1,0 +1,16 @@
+
+Archive created by Rob Hamerling, contents expected:
+
+ Length  Method   Size  Ratio    Date   Time    CRC-32  Attr  Name
+ ------  ------   ----- -----    ----   ----   -------- ----  ----
+ 221754  DeflatN 203033  8.5%  01/26/14 10:28a 160e1918 --w-  BIN/jalv2ecs.exe
+    944  DeflatN    471 50.2%  12/22/13  2:47p 6293e0e1 --w-  readme.os2
+   1571  DeflatN    662 57.9%  12/01/13  1:39p 551ad102 --w-  jalv24q.txt
+    696  DeflatN    419 39.8%  07/14/12  3:04p 991a27c2 --w-  SRC/buildlevel.cmd
+   1375  DeflatN    577 58.1%  01/02/14  2:39p d0e9a8c0 --w-  SRC/JAL/makefile.wx
+   1838  DeflatN    645 65.0%  01/02/14  2:38p 24636944 --w-  SRC/LIBCORE/makefile.wx
+   1660  DeflatN    605 63.6%  01/02/14  2:38p 09c45038 --w-  SRC/LIBPIC12/makefile.wx
+   1102  DeflatN    514 53.4%  01/02/14  2:38p 2336ffb9 --w-  SRC/LIBUTILS/makefile.wx
+ ------          ------ -----                                 ----
+ 230940          206926 10.4%                                    8
+

@@ -1,0 +1,48 @@
+# -------------------------------------------------------------------
+# Makefile to build JAL V2 library for eComStation (OS/2)
+#
+# For use with WMAKE of the Watcom Open C/C++ compiler
+# Assumes - Watcom WCC386 compiler
+#         - Watcom Library Manager
+#
+# author: Rob Hamerling
+#
+# (c) Copyright 2008..2014. R.Hamerling. All rights reserved.
+# ------------------------------------------------------------------
+
+BASEDIR  = k:\watcom                  # base directory of compiler
+
+CC       = wcc386
+!ifneqi platform linux
+! define CFLAGS -6r -bc -bt=$(platform) -i=$(BASEDIR)\h\$(platform);$(BASEDIR)\h -ox -wx -zq
+!else
+! define CFLAGS -6r -bc -bt=linux -i=$(BASEDIR)\lh;$(BASEDIR)\h -ox -wx -zq
+!endif
+OBJECTS  = jal_asm.obj   &
+           jal_blck.obj  &
+           jal_ctrl.obj  &
+           jal_expr.obj  &
+           jal_file.obj  &
+           jal_incl.obj  &
+           jal_op.obj    &
+           jal_proc.obj  &
+           jal_tokn.obj  &
+           jal_vdef.obj  &
+           jal_prnt.obj
+
+.extensions :
+.extensions : .lib .obj .c .h
+
+!loaddll  wcc386 wccd386
+
+all : jal_main.obj LibJal.lib .always .symbolic
+
+.c.obj : .autodepend .always
+     @echo Compiling $*
+     @$(CC)  $(CFLAGS) $*
+
+LibJal.lib : jal_main.obj $(OBJECTS)
+     @echo Building library $*
+     @wlib  -q -b -n $* $(OBJECTS)
+     @del  $(OBJECTS)
+

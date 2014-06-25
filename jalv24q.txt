@@ -1,0 +1,37 @@
+                          Upload Information Template for Hobbes.nmsu.edu
+                          ===============================================
+
+        Archive Filename: jalv24q.zip
+       Short Description: JALV2 compiler version 2.4q for eComStation (OS/2).
+        Long Description: This is a binary distribution of JalV2ecs.exe only,
+                          built from the original sources. Makefiles are
+                          included to rebuild the executable from the
+                          original sources with Open Watcom C/C++ compiler
+                          and utilities.
+                          The complete original JalV2 compiler and
+                          associated PIC specifications can be obtained
+                          from the Homepage of JalV2
+                          (see also the included file Readme.OS2).
+                          An extensive set of libraries can be found at
+                          http://code.google.com/p/jallib
+
+      Proposed directory
+           for placement: /pub/os2/dev/misc
+
+               Your name: Rob Hamerling
+           Email address: robhamerling@gmail.com
+    Program contact name: (same)
+   Program contact email: (same)
+             Program URL: http://www.robh.nl/picsoft.php#jalv2
+
+      Would you like the
+   contact email address
+    included in listings? yes
+
+Operating System/Version: eComStation, OS/2 Warp, any version.
+ Additional requirements: Original Compiler at http://www.casadeyork.com/jalv2
+
+                Replaces:
+
+
+

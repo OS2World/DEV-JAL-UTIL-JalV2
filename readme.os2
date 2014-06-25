@@ -1,0 +1,29 @@
+
+ Compilation of JalV2 for eComStation (OS/2)
+ -------------------------------------------
+
+ The JalV2 source can be compiled with the Open Watcom C/C++ compiler.
+ The compilation can be performed with Wmake, for which makefiles are
+ provided called 'makefile.w2' in the main source directory (src) and
+ 'makefile.wx' in each of its 4 subdirectories.
+
+ The main directory contains also a file 'buildlevel.cmd', which creates
+ a OS/2 bldlevel signature in the executable, included by Wlink.
+
+ In addition to the Open Watcom C/C++ compiler LxLite is used to compress
+ the OS/2 executable. This is optional: if not desired remove the last
+ statement of the block for the target JalV2eCS.exe in makefile.w2.
+
+ Start the compilation with:
+
+   wmake -h -f makefile.all
+
+ provided the Watcom environment setting is active!
+
+ Linux and W32 executables are created with these makefile as well!
+
+ Have Fun!
+
+ Rob Hamerling
+
+
